@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaTrack Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">💧 AquaTrack</div>
+
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li>Add Usage</li>
+        <li>History</li>
+    </ul>
+</nav>
+
+<section class="dashboard">
+
+<h1>Dashboard</h1>
+
+<div class="dashboard-cards">
+
+<div class="card">
+<h2>Today's Usage</h2>
+<h1 id="todayUsage">0 L</h1>
+</div>
+
+<div class="card">
+<h2>Daily Goal</h2>
+<h1>150 L</h1>
+</div>
+
+<div class="card">
+<h2>Water Saved</h2>
+<h1>0 L</h1>
+</div>
+
+<div class="card">
+<h2>Weekly Average</h2>
+<h1>0 L</h1>
+</div>
+
+</div>
+
+<div class="chart-container">
+<canvas id="waterChart"></canvas>
+</div>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
