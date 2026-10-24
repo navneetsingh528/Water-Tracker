@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>AquaTrack Dashboard</title>
 
     <link rel="stylesheet" href="style.css">
@@ -12,52 +14,535 @@
 
 <body>
 
+<!-- =========================================
+     NAVBAR
+     ========================================= -->
+
 <nav>
-    <div class="logo">💧 AquaTrack</div>
+
+    <div class="logo">
+        💧 AquaTrack
+    </div>
 
     <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="dashboard.html">Dashboard</a></li>
-        <li>Add Usage</li>
-        <li>History</li>
+
+        <li>
+            <a href="index.html">
+                Home
+            </a>
+        </li>
+
+        <li>
+            <a href="dashboard.html" class="active">
+                Dashboard
+            </a>
+        </li>
+
+        <li>
+            <a href="add-usage.html">
+                Add Usage
+            </a>
+        </li>
+
+        <li>
+            <a href="history.html">
+                History
+            </a>
+        </li>
+
+        <li>
+            <a href="tips.html">
+                Tips
+            </a>
+        </li>
+
     </ul>
+
 </nav>
+
+
+<!-- =========================================
+     DASHBOARD
+     ========================================= -->
 
 <section class="dashboard">
 
-<h1>Dashboard</h1>
 
-<div class="dashboard-cards">
+    <!-- HEADER -->
 
-<div class="card">
-<h2>Today's Usage</h2>
-<h1 id="todayUsage">0 L</h1>
-</div>
+    <div class="dashboard-header">
 
-<div class="card">
-<h2>Daily Goal</h2>
-<h1>150 L</h1>
-</div>
+        <div>
 
-<div class="card">
-<h2>Water Saved</h2>
-<h1>0 L</h1>
-</div>
+            <p class="dashboard-label">
+                YOUR WATER JOURNEY
+            </p>
 
-<div class="card">
-<h2>Weekly Average</h2>
-<h1>0 L</h1>
-</div>
+            <h1>
+                Dashboard 💧
+            </h1>
 
-</div>
+            <p class="dashboard-subtitle">
+                Track your water consumption and build better habits.
+            </p>
 
-<div class="chart-container">
-<canvas id="waterChart"></canvas>
-</div>
+        </div>
+
+
+        <a
+            href="add-usage.html"
+            class="dashboard-button"
+        >
+            + Add Usage
+        </a>
+
+    </div>
+
+
+
+    <!-- =========================================
+         STAT CARDS
+         ========================================= -->
+
+    <div class="dashboard-cards">
+
+
+        <!-- TODAY -->
+
+        <div class="card usage-card">
+
+            <div class="card-top">
+
+                <div class="card-icon">
+                    💧
+                </div>
+
+                <span class="status-dot"></span>
+
+            </div>
+
+            <h2>
+                Today's Usage
+            </h2>
+
+            <h1 id="todayUsage">
+                0 L
+            </h1>
+
+            <div class="mini-progress">
+
+                <div id="todayProgress"></div>
+
+            </div>
+
+            <p
+                id="waterBadge"
+                class="water-badge"
+            >
+                🌱 Water Saver
+            </p>
+
+        </div>
+
+
+
+        <!-- DAILY GOAL -->
+
+        <div class="card goal-card">
+
+            <div class="card-top">
+
+                <div class="card-icon">
+                    🎯
+                </div>
+
+            </div>
+
+            <h2>
+                Daily Goal
+            </h2>
+
+            <div class="goal-layout">
+
+                <div class="goal-circle">
+
+                    <div class="goal-circle-inner">
+
+                        <strong id="goalPercent">
+                            0%
+                        </strong>
+
+                        <span>
+                            Goal
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <h1>
+                        100 L
+                    </h1>
+
+                    <p>
+                        Daily target
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- WATER SAVED -->
+
+        <div class="card saved-card">
+
+            <div class="card-top">
+
+                <div class="card-icon">
+                    🌱
+                </div>
+
+            </div>
+
+            <h2>
+                Water Saved
+            </h2>
+
+            <h1 id="waterSaved">
+                0 L
+            </h1>
+
+            <p>
+                Keep conserving water!
+            </p>
+
+        </div>
+
+
+
+        <!-- WEEKLY AVERAGE -->
+
+        <div class="card average-card">
+
+            <div class="card-top">
+
+                <div class="card-icon">
+                    📊
+                </div>
+
+            </div>
+
+            <h2>
+                Weekly Average
+            </h2>
+
+            <h1 id="weeklyAverage">
+                0 L
+            </h1>
+
+            <p>
+                Average daily usage
+            </p>
+
+        </div>
+
+
+
+        <!-- STREAK -->
+
+        <div class="card streak-card">
+
+            <div class="card-top">
+
+                <div class="card-icon">
+                    🔥
+                </div>
+
+            </div>
+
+            <h2>
+                Water Streak
+            </h2>
+
+            <h1 id="waterStreak">
+                0 Days
+            </h1>
+
+            <p>
+                Keep saving water!
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         TODAY VS AVERAGE
+         ========================================= -->
+
+    <div class="comparison-card">
+
+        <div class="comparison-icon">
+            📈
+        </div>
+
+        <div class="comparison-content">
+
+            <p class="dashboard-label">
+                PERFORMANCE
+            </p>
+
+            <h2>
+                Today vs Weekly Average
+            </h2>
+
+            <p id="comparisonText">
+                Start tracking your water usage to see your performance.
+            </p>
+
+        </div>
+
+
+        <div
+            id="comparisonValue"
+            class="comparison-value"
+        >
+            --
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         SMART INSIGHT
+         ========================================= -->
+
+    <div class="dashboard-message">
+
+        <div class="message-icon">
+            💙
+        </div>
+
+        <div>
+
+            <p class="dashboard-label">
+                AQUATRACK INSIGHT
+            </p>
+
+            <h2 id="waterInsight">
+                Every Drop Counts
+            </h2>
+
+            <p id="insightDescription">
+                Small changes in your daily habits can make a big difference
+                in saving water and protecting our environment.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         CHART
+         ========================================= -->
+
+    <div class="chart-container">
+
+
+        <div class="chart-header">
+
+
+            <div>
+
+                <p class="dashboard-label">
+                    WATER ANALYTICS
+                </p>
+
+                <h2>
+                    Water Consumption
+                </h2>
+
+            </div>
+
+
+            <!-- CHART FILTER -->
+
+            <div class="chart-controls">
+
+                <button
+                    id="sevenDayBtn"
+                    class="chart-filter active"
+                    type="button"
+                >
+                    7 Days
+                </button>
+
+                <button
+                    id="thirtyDayBtn"
+                    class="chart-filter"
+                    type="button"
+                >
+                    30 Days
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="chart-info">
+
+            <span>
+                💧 Daily consumption
+            </span>
+
+            <span id="chartTotal">
+                Total: 0 L
+            </span>
+
+        </div>
+
+
+
+        <div class="chart-wrapper">
+
+            <canvas id="waterChart"></canvas>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =========================================
+         QUICK ACTIONS
+         ========================================= -->
+
+    <div class="quick-section">
+
+        <p class="dashboard-label">
+            QUICK ACTIONS
+        </p>
+
+
+        <div class="quick-actions">
+
+
+            <a
+                href="add-usage.html"
+                class="quick-card"
+            >
+
+                <span>
+                    💧
+                </span>
+
+                <div>
+
+                    <h3>
+                        Add Water Usage
+                    </h3>
+
+                    <p>
+                        Record your latest consumption
+                    </p>
+
+                </div>
+
+                <strong>
+                    →
+                </strong>
+
+            </a>
+
+
+
+            <a
+                href="history.html"
+                class="quick-card"
+            >
+
+                <span>
+                    📜
+                </span>
+
+                <div>
+
+                    <h3>
+                        View History
+                    </h3>
+
+                    <p>
+                        See your previous water usage
+                    </p>
+
+                </div>
+
+                <strong>
+                    →
+                </strong>
+
+            </a>
+
+
+
+            <a
+                href="tips.html"
+                class="quick-card"
+            >
+
+                <span>
+                    🌱
+                </span>
+
+                <div>
+
+                    <h3>
+                        Water Saving Tips
+                    </h3>
+
+                    <p>
+                        Discover ways to save water
+                    </p>
+
+                </div>
+
+                <strong>
+                    →
+                </strong>
+
+            </a>
+
+
+        </div>
+
+    </div>
+
 
 </section>
+
+
+
+<!-- =========================================
+     JAVASCRIPT
+     ========================================= -->
 
 <script src="script.js"></script>
 
 </body>
+
 </html>

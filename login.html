@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AquaTrack | Login</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #0077ff, #00c6ff, #b2f7ff);
+        }
+
+        .login-container {
+            width: 380px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: 700;
+            color: #0077ff;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 13px 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            outline: none;
+            font-size: 15px;
+        }
+
+        .login-container input:focus {
+            border-color: #0077ff;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 13px;
+            border: none;
+            border-radius: 10px;
+            background: #0077ff;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .login-btn:hover {
+            background: #005fcc;
+        }
+
+        #loginMessage {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .guest {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .guest a {
+            color: #0077ff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <div class="logo">💧 AquaTrack</div>
+
+        <p class="subtitle">Login to track your water usage</p>
+
+        <form id="loginForm">
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                required
+            >
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter your password"
+                required
+            >
+
+            <button type="submit" class="login-btn">
+                Login
+            </button>
+
+        </form>
+
+        <p id="loginMessage"></p>
+
+        <div class="guest">
+            Want to continue without login?
+            <a href="index.html">Continue as Guest</a>
+        </div>
+
+    </div>
+
+
+    <script>
+
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const message = document.getElementById("loginMessage");
+
+            if (email && password) {
+
+                localStorage.setItem("aquaTrackLoggedIn", "true");
+                localStorage.setItem("aquaTrackUser", email);
+
+                message.style.color = "green";
+                message.innerText = "✅ Login successful!";
+
+                setTimeout(function() {
+                    window.location.href = "index.html";
+                }, 800);
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>

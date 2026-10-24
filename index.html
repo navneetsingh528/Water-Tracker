@@ -1,143 +1,905 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title> |#Save Every Drop</title>
+<script>
+    if (localStorage.getItem("aquaTrackLoggedIn") !== "true") {
+        window.location.href = "login.html";
+    }
+</script>
 
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>AquaTrack | Save Every Drop</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
 
 </head>
 
+
 <body>
+
+
+<!-- ================= NAVBAR ================= -->
 
 <nav>
 
-<div class="logo">
-💧 AquaTrack
-</div>
+    <div class="logo">
+        💧 AquaTrack
+    </div>
 
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="dashboard.html">Dashboard</a></li>
-<li><a href="#">Features</a></li>
-<li><a href="#">Contacts</a></li>
+    <ul>
 
-</ul>
+        <li>
+            <a href="index.html" class="active">
+                Home
+            </a>
+        </li>
+
+    
+        <li>
+            <a href="#features">
+                Features
+            </a>
+        </li>
+
+        <li>
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+        </li>
+
+        <li>
+            <a href="add-usage.html">
+                Add Usage
+            </a>
+        </li>
+
+        <li>
+            <a href="history.html">
+                History
+            </a>
+        </li>
+
+        <li>
+            <a href="tips.html">
+                Tips
+            </a>
+        </li>
+
+        <li>
+            <a href="#contact">
+                Contact
+            </a>
+        </li>
+
+    </ul>
 
 </nav>
 
 
+
+<!-- ================= HERO SECTION ================= -->
+
 <section class="hero">
 
-<div class="hero-text">
+    <div class="hero-content">
 
-<h1>#Track Every Drop.<br>#Save Our Future.</h1>
+        <p class="hero-label">
+            SMART WATER TRACKING
+        </p>
 
-<p>
+        <h1>
+            Save Water.
+            <br>
+            <span>Save the Future. 💧</span>
+        </h1>
 
-Monitor your daily water consumption,
-analyze usage trends and contribute
-towards a sustainable environment.
+        <p class="hero-description">
+            AquaTrack helps you monitor your daily water consumption,
+            understand your habits, and make every drop count.
+        </p>
 
-</p>
+        <div class="hero-buttons">
 
-<button>
-Start Tracking →
-</button>
+            <a
+                href="add-usage.html"
+                class="hero-button"
+            >
+                Start Tracking →
+            </a>
 
-</div>
+            <a
+                href="#features"
+                class="hero-secondary-button"
+            >
+                Explore Features
+            </a>
+
+        </div>
+
+    </div>
 
 
-<div class="hero-image">
+    <div class="hero-visual">
 
-<div class="circle">
+        <div class="water-drop">
+            💧
+        </div>
 
-💧
+        <div class="floating-card card-one">
+            💧
+            <span>
+                Track Usage
+            </span>
+        </div>
 
-</div>
+        <div class="floating-card card-two">
+            🌱
+            <span>
+                Save Water
+            </span>
+        </div>
 
-</div>
+        <div class="floating-card card-three">
+            📊
+            <span>
+                View Analytics
+            </span>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FEATURES ================= -->
+
+<section
+    class="features-section"
+    id="features"
+>
+
+    <div class="section-heading">
+
+        <p>
+            WHY AQUATRACK?
+        </p>
+
+        <h2>
+            Powerful Features 💧
+        </h2>
+
+        <span>
+            Everything you need to understand and reduce your
+            water consumption.
+        </span>
+
+    </div>
+
+
+    <div class="features-grid">
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                💧
+            </div>
+
+            <h3>
+                Water Tracking
+            </h3>
+
+            <p>
+                Record your daily water consumption and keep
+                track of every activity.
+            </p>
+
+        </div>
+
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                📊
+            </div>
+
+            <h3>
+                Smart Dashboard
+            </h3>
+
+            <p>
+                Get a clear overview of your water usage with
+                interactive statistics.
+            </p>
+
+        </div>
+
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                🎯
+            </div>
+
+            <h3>
+                Daily Goals
+            </h3>
+
+            <p>
+                Monitor your daily target and understand your
+                water consumption.
+            </p>
+
+        </div>
+
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                📈
+            </div>
+
+            <h3>
+                Usage Analytics
+            </h3>
+
+            <p>
+                Analyze your water consumption using 7-day
+                and 30-day charts.
+            </p>
+
+        </div>
+
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                🔥
+            </div>
+
+            <h3>
+                Water Streak
+            </h3>
+
+            <p>
+                Build consistent habits and keep your
+                water-saving streak going.
+            </p>
+
+        </div>
+
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                🌱
+            </div>
+
+            <h3>
+                Saving Tips
+            </h3>
+
+            <p>
+                Discover simple ways to reduce unnecessary
+                water consumption.
+            </p>
+
+        </div>
+
+
+    </div>
 
 </section>
 
 
-<section class="stats">
 
-<div class="box">
-<h2>71%</h2>
-<p>Earth Covered by Water</p>
-</div>
+<!-- ================= HOW IT WORKS ================= -->
 
-<div class="box">
-<h2>2.5%</h2>
-<p>Fresh Water Available</p>
-</div>
+<section class="how-section">
 
-<div class="box">
+    <div class="section-heading">
 
-</div>
+        <p>
+            SIMPLE PROCESS
+        </p>
+
+        <h2>
+            How AquaTrack Works
+        </h2>
+
+        <span>
+            Start tracking your water usage in three simple steps.
+        </span>
+
+    </div>
+
+
+    <div class="steps-container">
+
+
+        <div class="step-card">
+
+            <div class="step-number">
+                01
+            </div>
+
+            <div class="step-icon">
+                💧
+            </div>
+
+            <h3>
+                Record
+            </h3>
+
+            <p>
+                Add your daily water consumption by selecting
+                an activity and entering the amount used.
+            </p>
+
+        </div>
+
+
+
+        <div class="step-card">
+
+            <div class="step-number">
+                02
+            </div>
+
+            <div class="step-icon">
+                📊
+            </div>
+
+            <h3>
+                Analyze
+            </h3>
+
+            <p>
+                View your dashboard to understand your
+                daily and weekly water usage.
+            </p>
+
+        </div>
+
+
+
+        <div class="step-card">
+
+            <div class="step-number">
+                03
+            </div>
+
+            <div class="step-icon">
+                🌱
+            </div>
+
+            <h3>
+                Improve
+            </h3>
+
+            <p>
+                Follow useful water-saving tips and build
+                better conservation habits.
+            </p>
+
+        </div>
+
+
+    </div>
 
 </section>
 
 
-<section class="features">
 
-<h2>Why AquaTrack?</h2>
+<!-- ================= WHY SAVE WATER ================= -->
 
-<div class="cards">
+<section class="why-section">
 
-<div class="card">
+    <div class="why-content">
 
-<h3>🚿 Track Usage:</h3>
+        <p class="section-label">
+            OUR PURPOSE
+        </p>
 
-<p>
-Record water usage for bathing,
-washing, drinking and cooking.
-</p>
+        <h2>
+            Every Drop Counts 🌍
+        </h2>
 
-</div>
+        <p>
+            Water is one of our most valuable natural resources.
+            Understanding how we use it is the first step toward
+            responsible consumption.
+        </p>
 
-<div class="card">
+        <p>
+            AquaTrack makes it easier to monitor your habits,
+            identify unnecessary usage, and take small steps
+            toward a more sustainable lifestyle.
+        </p>
 
-<h3>📊 Smart Analytics:</h3>
+        <a
+            href="tips.html"
+            class="hero-button"
+        >
+            Explore Water Saving Tips →
+        </a>
 
-<p>
-Visualize your daily and monthly
-water consumption using graphs.
-</p>
+    </div>
 
-</div>
 
-<div class="card">
+    <div class="why-visual">
 
-<h3>🌍 Save Water</h3>
+        <div class="big-drop">
+            💧
+        </div>
 
-<p>
-Receive personalized tips to reduce
-water wastage.
-</p>
+        <h3>
+            Save Today
+        </h3>
 
-</div>
+        <p>
+            Protect Tomorrow
+        </p>
 
-</div>
+    </div>
 
 </section>
 
+
+
+<!-- ================= DASHBOARD PREVIEW ================= -->
+
+<section class="preview-section">
+
+    <div class="section-heading">
+
+        <p>
+            YOUR DATA
+        </p>
+
+        <h2>
+            Smart Water Analytics 📈
+        </h2>
+
+        <span>
+            Understand your water consumption at a glance.
+        </span>
+
+    </div>
+
+
+    <div class="preview-cards">
+
+
+        <div class="preview-card">
+
+            <span>
+                💧
+            </span>
+
+            <div>
+
+                <p>
+                    Today's Usage
+                </p>
+
+                <h3>
+                    Track
+                </h3>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="preview-card">
+
+            <span>
+                🎯
+            </span>
+
+            <div>
+
+                <p>
+                    Daily Goal
+                </p>
+
+                <h3>
+                    100 L
+                </h3>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="preview-card">
+
+            <span>
+                🔥
+            </span>
+
+            <div>
+
+                <p>
+                    Water Streak
+                </p>
+
+                <h3>
+                    Build
+                </h3>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="preview-card">
+
+            <span>
+                📊
+            </span>
+
+            <div>
+
+                <p>
+                    Analytics
+                </p>
+
+                <h3>
+                    7 / 30 Days
+                </h3>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="preview-button">
+
+        <a
+            href="dashboard.html"
+            class="hero-button"
+        >
+            Open Dashboard →
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= WATER SAVING TIPS ================= -->
+
+<section class="home-tips">
+
+    <div class="section-heading">
+
+        <p>
+            SMALL CHANGES
+        </p>
+
+        <h2>
+            Simple Ways to Save Water 🌱
+        </h2>
+
+        <span>
+            A few small habits can make a meaningful difference.
+        </span>
+
+    </div>
+
+
+    <div class="tips-grid">
+
+
+        <div class="home-tip-card">
+
+            <div>
+                🚿
+            </div>
+
+            <h3>
+                Shorter Showers
+            </h3>
+
+            <p>
+                Reduce unnecessary water use by keeping
+                showers efficient.
+            </p>
+
+        </div>
+
+
+
+        <div class="home-tip-card">
+
+            <div>
+                🪥
+            </div>
+
+            <h3>
+                Turn Off the Tap
+            </h3>
+
+            <p>
+                Don't leave the tap running while brushing
+                your teeth.
+            </p>
+
+        </div>
+
+
+
+        <div class="home-tip-card">
+
+            <div>
+                🌱
+            </div>
+
+            <h3>
+                Water Plants Wisely
+            </h3>
+
+            <p>
+                Water plants when needed and avoid
+                unnecessary wastage.
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="preview-button">
+
+        <a
+            href="tips.html"
+            class="hero-secondary-button"
+        >
+            View All Tips →
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= CONTACT ================= -->
+
+<section
+    class="contact-section"
+    id="contact"
+>
+
+    <div class="section-heading">
+
+        <p>
+            GET IN TOUCH
+        </p>
+
+        <h2>
+            Contact AquaTrack 💙
+        </h2>
+
+        <span>
+            Have an idea, suggestion, or feedback?
+            We'd love to hear from you.
+        </span>
+
+    </div>
+
+
+    <div class="contact-container">
+
+
+        <div class="contact-info">
+
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+                    💧
+                </div>
+
+                <div>
+
+                    <h3>
+                        AquaTrack
+                    </h3>
+
+                    <p>
+                        Making every drop count.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+                    📧
+                </div>
+
+                <div>
+
+                    <h3>
+                        Email
+                    </h3>
+
+                    <p>
+                        aquatrack@example.com
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+                    🌱
+                </div>
+
+                <div>
+
+                    <h3>
+                        Our Mission
+                    </h3>
+
+                    <p>
+                        Track water. Build awareness.
+                        Save every drop.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <form id="contactForm"
+            class="contact-form"
+            onsubmit="return false;"
+        >
+
+            <input
+                type="text"
+                placeholder="Your Name"
+                required
+            >
+
+            <input
+                type="email"
+                placeholder="Your Email"
+                required
+            >
+
+            <textarea
+                rows="5"
+                placeholder="Your Message"
+                required
+            ></textarea>
+
+            <button type="submit">
+                Send Message →
+            </button>
+
+        </form>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
-Made with lots of ❤️ for Environment
+    <div class="footer-content">
+
+        <div>
+
+            <h2>
+                💧 AquaTrack
+            </h2>
+
+            <p>
+                Track water. Build awareness.
+                Save every drop.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="#features">
+                Features
+            </a>
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="add-usage.html">
+                Add Usage
+            </a>
+
+            <a href="history.html">
+                History
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+            
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 AquaTrack. Made for a sustainable future 🌱
+        </p>
+
+    </div>
 
 </footer>
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault();
 
-<script src="script.js"></script>
+    alert("Message sent successfully! 💧");
+
+    this.reset();
+});
+</script>
 
 </body>
+
 </html>

@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Add Water Usage | AquaTrack</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+    <div class="logo">
+        💧 AquaTrack
+    </div>
+
+    <ul>
+
+        <li>
+            <a href="index.html">
+                Home
+            </a>
+        </li>
+
+        <li>
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+        </li>
+
+        <li>
+            <a
+                href="add-usage.html"
+                class="active"
+            >
+                Add Usage
+            </a>
+        </li>
+
+        <li>
+            <a href="history.html">
+                History
+            </a>
+        </li>
+
+        <li>
+            <a href="tips.html">
+                Tips
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+
+<!-- ================= MAIN PAGE ================= -->
+
+<main class="usage-page">
+
+
+    <!-- PAGE HEADER -->
+
+    <div class="usage-title">
+
+        <p>
+            AQUATRACK TRACKER
+        </p>
+
+        <h1>
+            Add Daily Water Usage 💧
+        </h1>
+
+        <span>
+            Record your water consumption and build better habits.
+        </span>
+
+    </div>
+
+
+
+    <!-- ================= CONTENT ================= -->
+
+    <div class="usage-layout">
+
+
+        <!-- ================= FORM ================= -->
+
+        <section class="usage-form-card">
+
+            <div class="usage-card-title">
+
+                <div class="usage-icon">
+                    💧
+                </div>
+
+                <div>
+
+                    <h2>
+                        Water Usage
+                    </h2>
+
+                    <p>
+                        Add a new record
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <form id="usageForm">
+
+
+                <!-- ACTIVITY -->
+
+                <div class="input-group">
+
+                    <label for="activity">
+                        Activity
+                    </label>
+
+                    <select
+                        id="activity"
+                        required
+                    >
+
+                        <option value="">
+                            Select Activity
+                        </option>
+
+                        <option value="Drinking">
+                            💧 Drinking
+                        </option>
+
+                        <option value="Bathing">
+                            🚿 Bathing
+                        </option>
+
+                        <option value="Cooking">
+                            🍳 Cooking
+                        </option>
+
+                        <option value="Washing Clothes">
+                            👕 Washing Clothes
+                        </option>
+
+                        <option value="Washing Utensils">
+                            🍽️ Washing Utensils
+                        </option>
+
+                        <option value="Cleaning">
+                            🧹 Cleaning
+                        </option>
+
+                        <option value="Gardening">
+                            🌱 Gardening
+                        </option>
+
+                        <option value="Other">
+                            ✨ Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- WATER USED -->
+
+                <div class="input-group">
+
+                    <label for="waterUsed">
+                        Water Used
+                    </label>
+
+                    <div class="water-input">
+
+                        <input
+                            type="number"
+                            id="waterUsed"
+                            placeholder="Enter litres"
+                            min="1"
+                            required
+                        >
+
+                        <span>
+                            L
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- DATE -->
+
+                <div class="input-group">
+
+                    <label for="usageDate">
+                        Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="usageDate"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- NOTES -->
+
+                <div class="input-group">
+
+                    <label for="notes">
+                        Notes
+                    </label>
+
+                    <textarea
+                        id="notes"
+                        rows="4"
+                        placeholder="Optional notes..."
+                    ></textarea>
+
+                </div>
+
+
+
+                <!-- SAVE BUTTON -->
+
+                <button
+                    type="submit"
+                    class="usage-submit"
+                >
+
+                    💾 Save Usage
+
+                    <span>
+                        →
+                    </span>
+
+                </button>
+
+
+            </form>
+
+        </section>
+
+
+
+        <!-- ================= RIGHT SIDE ================= -->
+
+        <aside class="usage-sidebar">
+
+
+            <!-- GOAL -->
+
+            <div class="usage-goal-card">
+
+                <div class="goal-heading">
+
+                    <div>
+
+                        <p>
+                            TODAY'S TARGET
+                        </p>
+
+                        <h2>
+                            Daily Goal
+                        </h2>
+
+                    </div>
+
+                    <span>
+                        🎯
+                    </span>
+
+                </div>
+
+
+                <div class="goal-amount">
+
+                    <strong>
+                        100
+                    </strong>
+
+                    <small>
+                        Litres
+                    </small>
+
+                </div>
+
+
+                <div class="goal-line">
+
+                    <div
+                        id="formGoalProgress"
+                    ></div>
+
+                </div>
+
+
+                <div class="goal-info">
+
+                    <div>
+
+                        <span>
+                            Used
+                        </span>
+
+                        <strong id="formTodayUsage">
+                            0 L
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Remaining
+                        </span>
+
+                        <strong id="formRemaining">
+                            100 L
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- TIP -->
+
+            <div class="usage-tip">
+
+                <div class="tip-symbol">
+                    💡
+                </div>
+
+                <div>
+
+                    <p>
+                        WATER SAVING TIP
+                    </p>
+
+                    <h3>
+                        Turn off the tap
+                    </h3>
+
+                    <span>
+                        Turn off the tap while brushing your
+                        teeth to avoid unnecessary water use.
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- QUICK ESTIMATES -->
+
+            <div class="usage-estimates">
+
+                <p>
+                    QUICK ESTIMATES
+                </p>
+
+                <h3>
+                    Common activities
+                </h3>
+
+
+                <div class="estimate">
+
+                    <span>
+                        🚿 Bathing
+                    </span>
+
+                    <strong>
+                        50 L
+                    </strong>
+
+                </div>
+
+
+                <div class="estimate">
+
+                    <span>
+                        👕 Washing Clothes
+                    </span>
+
+                    <strong>
+                        40 L
+                    </strong>
+
+                </div>
+
+
+                <div class="estimate">
+
+                    <span>
+                        🌱 Gardening
+                    </span>
+
+                    <strong>
+                        30 L
+                    </strong>
+
+                </div>
+
+
+                <div class="estimate">
+
+                    <span>
+                        🧹 Cleaning
+                    </span>
+
+                    <strong>
+                        20 L
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+        </aside>
+
+    </div>
+
+</main>
+
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
